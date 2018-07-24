@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class LoginController {
 
     @RequestMapping(value="/login")
-    @ResponseBody
     public String sayHello(){
-        return "Hello World!";
+        return "login";
     }
+
     @RequestMapping(value="/logout")
-    @ResponseBody
     public String sayGoodbye(){
-        return "See ya boi";
+        return "logout";
     }
 
 }
