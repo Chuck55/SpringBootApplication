@@ -15,16 +15,18 @@
 			<thead>
 				<tr>
 					<th align="center" width="25%">Description</th>
-					<th align="center" width="40%">Target Date</th>
-					<th align="center" width="35%">Is it Done?</th>
+                    <th align="center" width="40%">Target Date</th>
+                    <th align="center" width="35%">Is it Done?</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${todos}" var="todo">
 					<tr>
-						<td align="center">${todo.desc}</td>
-						<td align="center">${todo.targetDate}</td>
-						<td align="center">${todo.done}</td>
+		                <td align="left">${todo.desc}</td>
+                        <td align="left">${todo.targetDate}</td>
+                        <td align="left">${todo.done}</td>
+						<td><a type="left" class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -33,9 +35,6 @@
 
 		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 		<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-        	    		rel="stylesheet">
-
 	</div>
 </body>
 

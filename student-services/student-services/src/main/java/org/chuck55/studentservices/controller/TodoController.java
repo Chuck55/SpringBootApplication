@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+
 @Controller
 @SessionAttributes("name")
 public class TodoController {
@@ -28,6 +29,12 @@ public class TodoController {
     @RequestMapping(value="/add-todo", method = RequestMethod.GET)
     public String showAddTodoPage(ModelMap model){
         return "todo";
+    }
+
+    @RequestMapping(value="/delete-todo", method = RequestMethod.GET)
+    public String deleteTodo(@RequestParam int id){
+        service.deleteTodo(id);
+        return "redirect:/list-todos";
     }
 
     @RequestMapping(value="/add-todo", method = RequestMethod.POST)
